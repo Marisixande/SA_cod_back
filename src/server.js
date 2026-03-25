@@ -1,10 +1,14 @@
+// 'Projeto da SA sobre funcionarios de uma farmacia!'
 const express = require('express')
+import {routeFuncionarios} from '../src/routes/funcionarioRoutes.js'
 const app = express()
 const port = 3000
-let funcionarios = [
-    {id:1 , nome: "Alexandre"}
-]
 
 app.get('/', (req, res) => {
-res.send('Projeto da SA sobre funcionarios de uma farmacia!')
+})
+
+app.use('/funcionarios', routeFuncionarios)
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
 })
